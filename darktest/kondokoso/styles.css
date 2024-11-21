@@ -17,19 +17,6 @@ body.dark-mode {
     color: #ffffff;
 }
 
-.notification {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    padding: 24px 32px;
-    width: 520px;
-    max-width: 90%;
-    margin-bottom: 20px;
-    transition: background-color 0.3s, color 0.3s;
-    position: relative;
-}
 
 body.dark-mode .notification {
     background-color: #1e1e1e;
@@ -41,35 +28,16 @@ body.dark-mode .notification {
     margin-right: 16px;
 }
 
-.icon img {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-}
 
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
-    position: relative;
-}
-
-.urgent {
-    font-size: 14px;
-    color: #666;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: none;
-}
-
-body.dark-mode .urgent {
-    color: #bbbbbb;
 }
 
 .title {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     color: #333;
     margin-bottom: 8px;
 }
@@ -79,7 +47,7 @@ body.dark-mode .title {
 }
 
 .message {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
 }
 
@@ -87,24 +55,11 @@ body.dark-mode .message {
     color: #cccccc;
 }
 
-.time {
-    font-size: 14px;
-    color: #888;
-    text-align: right;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-}
-
-body.dark-mode .time {
-    color: #aaaaaa;
-}
-
 .controls {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 520px;
+    width: 480px;
     max-width: 90%;
 }
 
@@ -118,7 +73,7 @@ body.dark-mode .controls label {
     color: #ffffff;
 }
 
-.controls input, .controls textarea, .controls button, .controls select {
+.controls input, .controls textarea, .controls button {
     font-size: 16px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -134,8 +89,7 @@ body.dark-mode .controls label {
 }
 
 body.dark-mode .controls input, 
-body.dark-mode .controls textarea, 
-body.dark-mode .controls select {
+body.dark-mode .controls textarea {
     background-color: #333333;
     color: #ffffff;
 }
@@ -159,6 +113,41 @@ button:hover {
     background-color: #003f7f;
 }
 
-.hidden {
-    display: none;
+/* 通知全体の横幅を広げ、アイコンとタイトルを小さく調整 */
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    padding: 24px 32px;
+    width: 600px; /* 横幅を広げる */
+    max-width: 90%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.icon img {
+    width: 64px; /* アイコンを小さく */
+    height: 64px;
+    border-radius: 16px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px; /* タイトルのフォントサイズを小さく */
+    color: #333;
+}
+
+.immediate {
+    font-size: 14px; /* 即時通知のスタイル */
+    color: red;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.time {
+    font-size: 14px;
+    color: #888;
+    margin-left: auto; /* 右上に寄せる */
 }
