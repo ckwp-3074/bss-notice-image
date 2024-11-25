@@ -1,0 +1,177 @@
+/* 通常モードのスタイル */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ダークモードのスタイル */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    padding: 16px 32px;
+    width: 1132px; /* 固定幅 */
+    height: 298px; /* 固定高さ */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .notification {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.icon {
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.icon img {
+    width: 60px;  /* 固定サイズ */
+    height: 60px;  /* 固定サイズ */
+    border-radius: 16px;
+    object-fit: cover; /* 画像が枠に合わせて拡大・縮小されるようにする */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    max-width: 920px; /* 残りのスペースを使う */
+}
+
+.urgent {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: none;
+}
+
+body.dark-mode .urgent {
+    color: #bbbbbb;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.2; /* 行間を調整してバランスを保つ */
+}
+
+body.dark-mode .title {
+    color: #ffffff;
+}
+
+.message {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4; /* 行間を調整してバランスを保つ */
+}
+
+body.dark-mode .message {
+    color: #cccccc;
+}
+
+.time {
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+body.dark-mode .time {
+    color: #aaaaaa;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 520px;
+    max-width: 90%;
+}
+
+.controls label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+body.dark-mode .controls label {
+    color: #ffffff;
+}
+
+.controls input, .controls textarea, .controls button, .controls select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controls input, .controls textarea {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .controls input, 
+body.dark-mode .controls textarea, 
+body.dark-mode .controls select {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode button {
+    background-color: #0056b3;
+}
+
+button:hover {
+    background-color: #003f7f;
+}
+
+.hidden {
+    display: none;
+}
+
+/* レスポンシブデザインのため、スクリーンサイズが小さい場合の調整 */
+@media screen and (max-width: 1200px) {
+    .notification {
+        width: 90%; /* 画面幅に合わせて縮小 */
+        height: auto;
+    }
+}

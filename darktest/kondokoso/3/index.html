@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhoneの通知ジェネレーター</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="capture" class="notification">
+        <div class="icon">
+            <img src="default-icon.png" alt="アプリアイコン" id="appIcon">
+        </div>
+        <div class="content">
+            <div class="urgent" id="urgentLabel">即時通知</div>
+            <div class="title" id="notificationTitle">メッセージ</div>
+            <div class="message" id="notificationMessage">新しいメッセージがあります！</div>
+            <div class="time" id="notificationTimestamp">今</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <label for="iconUpload">アイコンを選択:</label>
+        <input type="file" id="iconUpload" accept="image/*">
+
+        <label for="titleInput">通知タイトル:</label>
+        <input type="text" id="titleInput" placeholder="タイトルを入力" value="メッセージ">
+
+        <label for="messageInput">通知メッセージ:</label>
+        <textarea id="messageInput" placeholder="メッセージを入力">新しいメッセージがあります！</textarea>
+
+        <div class="dark-mode-toggle">
+            <label for="darkModeCheckbox">ダークモードを有効にする:</label>
+            <input type="checkbox" id="darkModeCheckbox">
+        </div>
+
+        <div class="urgent-toggle">
+            <label for="urgentCheckbox">即時通知を表示:</label>
+            <input type="checkbox" id="urgentCheckbox">
+        </div>
+
+        <label for="notificationTime">通知時刻:</label>
+        <select id="notificationTime">
+            <option value="now">今</option>
+            <option value="custom">カスタム時刻</option>
+        </select>
+        
+        <div id="customTimeBox" class="hidden">
+            <label for="customTimeInput">カスタム時刻 (例: 12:00):</label>
+            <input type="time" id="customTimeInput">
+        </div>
+
+        <button id="saveBtn">PNG形式で保存</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
