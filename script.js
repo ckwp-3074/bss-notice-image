@@ -66,7 +66,7 @@ document.getElementById('saveBtn').addEventListener('click', function () {
         backgroundColor: null // 背景を透明にする場合
     }).then(function (canvas) {
         const link = document.createElement('a');
-        link.download = '高品質通知.png';
+        link.download = 'notificationimage.png';
         link.href = canvas.toDataURL('image/png', 1.0); // 高画質でエクスポート
         link.click();
     });
